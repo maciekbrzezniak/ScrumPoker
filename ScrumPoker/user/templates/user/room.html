@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hello!</title>
+</head>
+<body>
+    <h1>Scrum Poker</h1>
+    <h2 id="room_id">Room id: {{ room_id }}</h2>
+    <button onclick="copyRoomId()">Copy text</button>
+
+    <script>
+        function copyRoomId() {
+            var room_id_element = document.getElementById("room_id");
+            var room_id_text = room_id_element.innerText;
+
+            var room_id = room_id_text.replace("Room id: ", "");
+
+            // Tworzymy tymczasowy element input, aby można było skopiować jego wartość
+            var temp_input = document.createElement("input");
+            temp_input.value = room_id_text;
+            document.body.appendChild(temp_input);
+
+            // Wybieramy i kopiujemy tekst z elementu input
+            temp_input.select();
+            temp_input.setSelectionRange(0, 99999); // Dla wsparcia dla przeglądarek mobilnych
+            document.execCommand("copy");
+
+            // Usuwamy tymczasowy element input
+            document.body.removeChild(temp_input);
+
+            // Wyświetlamy komunikat o skopiowaniu tekstu
+            alert("Copied the text: " + room_id_text);
+        }
+    </script>
+</body>
+</html>

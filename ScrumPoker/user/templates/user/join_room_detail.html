@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Room</title>
+</head>
+<body>
+    <h1>Join Room</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="player_name">Your Name:</label><br>
+        <input type="text" id="player_name" name="player_name" required><br><br>
+        <button type="submit">Join Room</button>
+    </form>
+</body>
+</html>
