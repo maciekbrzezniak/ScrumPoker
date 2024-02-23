@@ -17,7 +17,7 @@
 
             // Tworzymy tymczasowy element input, aby można było skopiować jego wartość
             var temp_input = document.createElement("input");
-            temp_input.value = room_id_text;
+            temp_input.value = room_id;
             document.body.appendChild(temp_input);
 
             // Wybieramy i kopiujemy tekst z elementu input
@@ -29,7 +29,7 @@
             document.body.removeChild(temp_input);
 
             // Wyświetlamy komunikat o skopiowaniu tekstu
-            alert("Copied the text: " + room_id_text);
+            alert("Copied the text: " + room_id);
         }
     </script>
 </body>
